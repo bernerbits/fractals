@@ -11,12 +11,12 @@ package com.bernerbits.fractal.mandel;
 import com.bernerbits.fractal.Complex;
 import com.bernerbits.fractal.IFractalEvaluator;
 
-public class MandelbrotEvaluator implements IFractalEvaluator
+public class TricornEvaluator implements IFractalEvaluator
 {
   private final int maxIterations;
   private final double escapeThresholdSquared;
   
-  public MandelbrotEvaluator(int maxIterations, double escapeThreshold)
+  public TricornEvaluator(int maxIterations, double escapeThreshold)
   {
     this.maxIterations = maxIterations;
     escapeThresholdSquared = escapeThreshold * escapeThreshold;
@@ -29,7 +29,7 @@ public class MandelbrotEvaluator implements IFractalEvaluator
     Complex z = Complex.zero();
     while(++iterations < maxIterations && z.abs2() < escapeThresholdSquared)
     {
-      z = z.squared().plus(c); // ♫ And so on.
+      z = z.conjugate().squared().plus(c);
     }
     return iterations;
   }

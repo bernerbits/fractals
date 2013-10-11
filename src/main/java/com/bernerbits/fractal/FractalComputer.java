@@ -2,9 +2,9 @@
  *  File:         FractalComputer.java
  *  Created:      Oct 10, 2013
  *  Last Changed: $Date$
- *  Author:       Derek Berner - derek.c.berner@vanderbilt.edu
+ *  Author:       Derek Berner - bernerbits@gmail.com
  *
- *  This code is copyright (c) 2013 Vanderbilt University Medical Center
+ *  
  */
 package com.bernerbits.fractal;
 
@@ -32,9 +32,9 @@ public class FractalComputer
     
     fractalPlotter.start();
     
-    for(double y = viewPort.getMaxY(); y > viewPort.getMinY() - 1e-10; y -= yStep)
+    for(double y = viewPort.getMaxY(); y > viewPort.getMinY() - 1e-20; y -= yStep)
     {
-      for(double x = viewPort.getMinX(); x < viewPort.getMaxX() + 1e-10; x += xStep) 
+      for(double x = viewPort.getMinX(); x < viewPort.getMaxX() + 1e-20; x += xStep) 
       {
         Complex c = new Complex(x, y);
         int iterations = fractalEvaluator.calculateIterations(c);
