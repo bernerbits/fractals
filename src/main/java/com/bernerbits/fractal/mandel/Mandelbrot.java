@@ -13,11 +13,23 @@ public class Mandelbrot
     
     int maxIterations = 1024;
     ViewPort viewPort = new ViewPort();
-    viewPort.setExtents(-2, -1, 1, 1);
-    // viewPort.setExtents(-.795,.080,-.735,.170); // Seahorse Valley Close-Up
+    //viewPort.setExtents(-2, -1, 1, 1);
+    
+    //double zoom = 1e-10;
+    
+    //viewPort.setExtents(0.001643721971153 - zoom, -0.822467633298876 - zoom, 0.001643721971153 + zoom, -0.822467633298876 + zoom);
+    
+    double xzoom = 43;
+    double yzoom = 13;
+    double x = -.765;
+    double y = .125;
+    
+    viewPort.setExtents(x-(1.5/xzoom),y-(1/yzoom),x+(1.5/xzoom),y+(1/yzoom)); // Seahorse Valley Close-Up
 
+    //viewPort.setExtents(-.74364990 - (0.00073801/2), .13188204 - (0.00073801/3), -.74364990 + (0.00073801/2), .13188204 + (0.00073801/3));
+    
     new FractalComputer(viewPort, new MandelbrotEvaluator(maxIterations, 100),
-        new PNGPlotter(149, 101, maxIterations, new HSColorer(), "mandelbrot-full-1.png")).compute();
+        new PNGPlotter(6000, 4000, maxIterations, new HSColorer(), "seahorses-2.png")).compute();
   }
 
 }

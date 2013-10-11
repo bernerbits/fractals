@@ -21,9 +21,10 @@ public class Complex
 
   private static Complex zero = new Complex(0,0) {
     public double abs2() { return 0; }
-    public Complex squared() { return this; };
-    public Complex plus(Complex c) { return c; };
+    public Complex squared() { return this; }
+    public Complex plus(Complex c) { return c; }
     public Complex times(Complex c) { return this; }
+    public Complex conjugate() { return this; }
   };
   
   public double real() { return real; }
@@ -54,9 +55,15 @@ public class Complex
     return real * real + imaginary * imaginary;
   }
   
+  public Complex conjugate()
+  {
+    return new Complex(real, -imaginary);
+  }
+  
   @Override
   public String toString()
   {
     return real + "+" + imaginary + "i";
   }
+
 }

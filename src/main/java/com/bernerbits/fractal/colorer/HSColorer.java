@@ -36,8 +36,8 @@ public class HSColorer implements IColorer
       }
     }
     
-    float hue = 0.6f;
-    float hueStep = 0.02f;
+    float hue = 0.2f;
+    float hueStep = 0.01f;
     int size = iterationsSet.size();
     float saturation = 0;
     for(int i : iterationsSet.elementSet())

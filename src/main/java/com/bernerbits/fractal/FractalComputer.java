@@ -32,9 +32,9 @@ public class FractalComputer
     
     fractalPlotter.start();
     
-    for(double y = viewPort.getMaxY(); y > viewPort.getMinY() - 1e-10; y -= yStep)
+    for(double y = viewPort.getMaxY(); y > viewPort.getMinY() - 1e-20; y -= yStep)
     {
-      for(double x = viewPort.getMinX(); x < viewPort.getMaxX() + 1e-10; x += xStep) 
+      for(double x = viewPort.getMinX(); x < viewPort.getMaxX() + 1e-20; x += xStep) 
       {
         Complex c = new Complex(x, y);
         int iterations = fractalEvaluator.calculateIterations(c);
